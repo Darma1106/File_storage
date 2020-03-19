@@ -43,6 +43,7 @@ private function makeDir():bool{
     $dir_path = date('y/m');
     $this->dir = $dir_path;
   return  is_dir($dir_path)?:mkdir($dir_path,0755,true);
+  //文件夹权限请看情况更改
 }
 public function get_destination(){
     return $this->flie_destination;
