@@ -49,5 +49,17 @@ public function get_destination(){
     return $this->flie_destination;
 }
 
+public function get_file_net_addr($ip = '111'){
+    if ($ip == '111') {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    $arr1 = explode('/', __DIR__);
+    $arr2 = explode('/', $_SERVER['DOCUMENT_ROOT']);
+    $c = array_diff($arr1,$arr2);
+
+    //保存的图片在服务器端的网络地址
+    return $ip.'/'.implode("/",$c).'/'.$this->flie_destination;
+}
+
 }
 ?>
